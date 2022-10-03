@@ -72,6 +72,9 @@ client.on("interactionCreate", async (interaction) => {
     if (!interaction.isCommand()) {
         return;
     }
+
+    await interaction.reply("PROCESSING...");
+
     if (interaction.commandName === "docker") {
         const cmd = 'docker '+interaction.options.getString("command")+" "+interaction.options.getString("machine");
         const stdout = childProcess.execSync(cmd);
@@ -82,7 +85,7 @@ client.on("interactionCreate", async (interaction) => {
             msg = "int!!";
         }
 
-        await interaction.reply(msg);
+        await interaction.editReply(msg);
     }
 
     if (interaction.commandName === "containers") {
@@ -94,7 +97,7 @@ client.on("interactionCreate", async (interaction) => {
             msg = "int!!";
         }
 
-        await interaction.reply(msg);
+        await interaction.editReply(msg);
     }
 });
 
