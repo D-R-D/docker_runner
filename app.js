@@ -13,7 +13,7 @@ client.once("ready", async () => {
     var data0 =
     {
         name: "docker",
-        description: "docker start , stop and status ",
+        description: "docker start , stop and restart ",
         options: [
             {
                 name: "command",
